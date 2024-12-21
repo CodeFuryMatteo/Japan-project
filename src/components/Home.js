@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { TextField, Button } from '@mui/material';
 
 function Home() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Handle the change in the search query
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Handle the search button click
+  const handleSearch = () => {
+    if (searchQuery) {
+      // Redirect to Google with the search query
+      window.open(`https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`, '_blank');
+    }
+  };
+
   return (
     <section
       style={{
@@ -10,7 +26,7 @@ function Home() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        padding: '80px 0', // Adds padding for better spacing
+        padding: '80px 0',
         textAlign: 'center',
         color: '#fff',
       }}
@@ -40,6 +56,51 @@ function Home() {
         Explore its vibrant culture, breathtaking landscapes, and culinary delights
         that make it one of the most fascinating destinations in the world.
       </p>
+
+      {/* MUI Search Bar and Button - Positioned at bottom-right of the page */}
+      <div
+        style={{
+          position: 'fixed', // Fixed positioning relative to the viewport
+          bottom: '30px',    // 30px from the bottom
+          right: '30px',     // 30px from the right
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          zIndex: 2,         // Ensure it appears above other content
+        }}
+      >
+        <TextField
+          label="Search"
+          variant="outlined"
+          value={searchQuery}
+          onChange={handleSearchChange}
+          style={{
+            width: '200px',
+            backgroundColor: '#fff', // Solid background for visibility
+            borderRadius: '25px',
+            opacity: '1', // Full opacity to make it stand out
+          }}
+        />
+        <Button
+          variant="contained"
+          color="primary" // A more visible color for the button
+          onClick={handleSearch}
+          style={{
+            backgroundColor: '#ff5722', // Button color for visibility
+            color: '#fff',
+            padding: '8px 15px',
+            borderRadius: '25px',
+            textTransform: 'none',
+            opacity: '1',
+            transition: 'transform 0.3s ease',
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          Search
+        </Button>
+      </div>
+
       <div
         style={{
           backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background for readability
