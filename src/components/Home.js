@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button } from '@mui/material';
+import { fetchContent } from '../utils/api';
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [homeData, setHomeData] = useState(null);  // State to store home data
 
   // Handle the change in the search query
   const handleSearchChange = (e) => {
@@ -16,6 +18,20 @@ function Home() {
       window.open(`https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`, '_blank');
     }
   };
+
+  // Fetch home content from the API
+  useEffect(() => {
+    const getHomeContent = async () => {
+      const data = await fetchContent('home'); // Fetch home data from the backend
+      setHomeData(data);  // Set the home data to the state
+    };
+
+    getHomeContent();
+  }, []);
+
+  if (!homeData) {
+    return <div>Loading...</div>;  // Loading state if content is not available
+  }
 
   return (
     <section
@@ -41,7 +57,7 @@ function Home() {
           textTransform: 'uppercase',
         }}
       >
-        Discover the Heart of Japan
+        {homeData.title}  {/* Dynamically loaded title */}
       </h2>
       <p
         style={{
@@ -52,9 +68,7 @@ function Home() {
           marginBottom: '40px',
         }}
       >
-        Japan is a land where ancient traditions seamlessly blend with cutting-edge innovation.
-        Explore its vibrant culture, breathtaking landscapes, and culinary delights
-        that make it one of the most fascinating destinations in the world.
+        {homeData.description}  {/* Dynamically loaded description */}
       </p>
 
       {/* MUI Search Bar and Button - Positioned at bottom-right of the page */}
@@ -115,7 +129,7 @@ function Home() {
         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
       >
         <img
-          src="https://discoverjapan.blog/wp-content/uploads/2024/05/29482751_s.jpg"
+          src={homeData.image} 
           alt="Mount Fuji and Torii Gate"
           style={{
             width: '100%',

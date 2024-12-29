@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { fetchContent } from '../utils/api';
 
 function About() {
+  const [content, setContent] = useState(null);
+
+  useEffect(() => {
+    const getAboutContent = async () => {
+      const data = await fetchContent('about');  // Fetch the content for 'about' from the API
+      setContent(data);  // Set the fetched data to the state
+    };
+
+    getAboutContent();
+  }, []);  // The empty array ensures this runs once, after the initial render
+
+  if (!content) {
+    return <div>Loading...</div>;  // If content is not yet fetched, display a loading message
+  }
+
   return (
     <section
       style={{
@@ -25,7 +41,7 @@ function About() {
           textTransform: 'uppercase',
         }}
       >
-        About Japan
+        {content.title}  {/* Dynamically loaded title */}
       </h2>
       <p
         style={{
@@ -36,9 +52,7 @@ function About() {
           marginBottom: '40px',
         }}
       >
-        Japan, an island nation in East Asia, is known for its rich cultural heritage, modern cities,
-        and stunning natural landscapes. From the iconic Mount Fuji to the bustling streets of Tokyo,
-        Japan offers a unique blend of tradition and innovation.
+        {content.description}  {/* Dynamically loaded description */}
       </p>
       <div
         style={{
@@ -54,7 +68,7 @@ function About() {
         onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
       >
         <img
-          src="https://asset.japan.travel/image/upload/v1646014276/tokyo/H_00658_001.jpg"
+          src={content.image} 
           alt="Tokyo Tower and Skyline"
           style={{
             width: '100%',
