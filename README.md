@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Japanese Cuisine React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Welcome to the **Japanese Cuisine React App**, a visually stunning and feature-rich project designed to showcase the beauty and richness of Japanese culinary culture. Built with React, Material UI, and Node.js, this app integrates animations, API-based dynamic content, and responsive design to provide an engaging user experience.
 
-In the project directory, you can run:
+This project was created by **[Your Name]** as part of a journey to explore modern web development technologies and create impactful user interfaces.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Dynamic Content Loading:** Fetch data from custom APIs using Axios for seamless integration of back-end content into the front-end.
+- **Rich UI/UX:** Styled with Material UI and custom animations for smooth transitions, hover effects, and aesthetic appeal.
+- **Highlighted Japanese Dishes:** Explore iconic dishes like Sushi, Ramen, Tempura, and Matcha Desserts, each accompanied by vivid imagery and detailed descriptions.
+- **Reusable Components:** Modular design approach for better scalability and maintenance.
+- **Responsive Design:** Optimized for viewing across all devices, including desktops, tablets, and mobile phones.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+### Front-End
+- **React.js**: For building the user interface and handling the component-based structure.
+- **Material UI**: For modern and responsive styling with prebuilt components.
+- **CSS Animations**: Custom animations for smooth UI transitions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Back-End
+- **Node.js**: For serving the API endpoints.
+- **Express.js**: To set up and manage API routes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tools and Libraries
+- **Axios**: For fetching data from APIs.
+- **React Hooks**: To manage state and lifecycle events efficiently.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## API Endpoints
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The app fetches its data from custom API endpoints created in the back-end:
+- `/api/cuisine`: Returns a list of Japanese dishes with their details (name, description, image URL, etc.).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Installation and Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Follow the steps below to set up the project locally:
 
-## Learn More
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/japanese-cuisine-app.git
+   cd japanese-cuisine-app
+2. Install dependencies for the front-end:
+   ```bash
+   cd client
+   npm install
+3. Start the front-end development server:
+   ```bash
+   npm start
+4.	Install dependencies for the back-end:
+     ```bash
+    cd ../server
+    npm install
+5.	Start the back-end server:
+    ```bash
+    npm start
+6.	Access the app in your browser:
+	•	Front-end: http://localhost:3000
+	•	Back-end API: http://localhost:5000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Highlights
+	•	Custom Animations: Smooth fade-ins, hover scaling, and stylish transitions.
+	•	Data-Driven UI: Front-end components populated dynamically using the back-end API.
+	•	Interactive Design: Hover effects and responsive layouts enhance the user’s browsing experience.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Credits
 
-### Code Splitting
+This project was created by [Your Name] with a passion for coding and a love for Japanese culture. Special thanks to the open-source community for the amazing tools and resources.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+This project is open-source and available under the MIT License.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Feel free to contribute and make this app even better!
 
-### Making a Progressive Web App
+## About Me!!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+My name is Matteo Fernando, and I am 14 years old and I’m an enthusiastic coder with dreams of one day becoming a world-renowned software engineer. I envision using technology to make a significant, positive impact on the world. Although I am currently in high school and just beginning this exciting journey, I am incredibly motivated and eager to learn. Each line of code I write and every project I complete brings me one step closer to achieving my aspirations. In just two years, I will officially embark on this path, fully committed to transforming my passion into a powerful tool for change and innovation. The road may be long, but I am thrilled about the journey ahead and determined to make a difference.
